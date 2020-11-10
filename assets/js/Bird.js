@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-11-08 16:37:33
- * @LastEditTime: 2020-11-08 21:41:57
+ * @LastEditTime: 2020-11-11 01:19:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \canvas\flappyBird\assets\js\Bird.js
@@ -61,8 +61,10 @@
         this.y += this.v;
 
         //小鸟掉地上也是输
-        if (this.B >= game.land.y) {
-            clearInterval(game.time);
+        if (this.B >= game.sm.land.y) {
+            this.die();
+
+            // clearInterval(game.time);
         }
     }
     
@@ -85,6 +87,27 @@
             this.d -= 1.5;
          }
         
+    }
+
+    //小鸟死亡，游戏结束
+    Bird.prototype.die = function () {
+        //保存游戏分数
+
+        let maxScore = localStorage.getItem("MAX_SCORE");
+        if (maxScore) { //判断这个最大值是存在的
+            if (game.score > maxScore) {
+                localStorage.setItem("MAX_SCORE", game.score);
+            }
+        } else {
+            localStorage.setItem("MAX_SCORE", game.score);
+         }
+        
+
+
+        game.checkpoint = 1;
+
+        game.sm.enter(4);
+    
     }
 })()
 

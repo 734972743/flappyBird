@@ -23,7 +23,13 @@
         {"name" : "shuzi6", "url" : "./assets/image/font_054.png"},
         {"name" : "shuzi7", "url" : "./assets/image/font_055.png"},
         {"name" : "shuzi8", "url" : "./assets/image/font_056.png"},
-        {"name" : "shuzi9", "url" : "./assets/image/font_057.png"}
+        {"name" : "shuzi9", "url" : "./assets/image/font_057.png"},
+        {"name" : "logo", "url" : "./assets/image/title.png"},
+        {"name" : "button_play", "url" : "./assets/image/button_play.png"},
+        {"name" : "tutorial", "url" : "./assets/image/tutorial.png"},
+        {"name" : "game_over", "url" : "./assets/image/text_game_over.png"}
+
+        
     ]
 
 }

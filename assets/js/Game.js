@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-11-08 10:56:27
- * @LastEditTime: 2020-11-08 23:53:54
+ * @LastEditTime: 2020-11-11 01:26:10
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \canvas\flappyBird\assets\js\Game.js
@@ -21,6 +21,10 @@
 
         //分数
         this.score = 0;
+        //最高分
+        this.maxScore = 0; 
+
+        this.checkpoint = 1;  //关卡
 
         //初始化
         this.init();
@@ -62,7 +66,7 @@
         this.canvas.width = windowW;
         this.canvas.height = windowH;
 
-        this.bindEvent();
+        // this.bindEvent();
         
     }
 
@@ -127,18 +131,14 @@
     Game.prototype.start = function () {
         var self = this;
 
-        // this.background = new Background();
-
-
-        
-
         
        //Game.js只管理SceneManager这个类
         this.sm = new SceneManager();
 
 
         //设置定时器
-         this.time = setInterval(() => {
+        this.time = setInterval(() => {
+
             self.fno++ 
             self.clear();  //清屏
 
@@ -146,45 +146,17 @@
             self.sm.render();
             self.sm.update();
 
-            // //创建背景类，并渲染，更新它
-            // self.background.render();
-            // self.background.update();
-
-            //要后画大地，用大地盖住管子
-             //更新，渲染管子
-            //  我们每150帧绘制一个管子
-        //      if (this.fno % this.pipeRate === 0) {
-        //         new Pipe();
-        //    }
-        //     for (let i = 0; i < this.pipeArr.length; i++){
-        //         this.pipeArr[i].render();
-        //         this.pipeArr[i].update();
-        //     }
-
-
-        //     //更新，渲染大地
-        //     self.land.render();
-        //     self.land.update();
-
-        //    //渲染，更新小鸟
-        //     self.bird.render();
-        //     self.bird.update();
-
-            //渲染分数
-             var score_length = self.score.toString().length;
-             for (let i = 0; i < score_length; i++){
-                 self.ctx.drawImage(self.R["shuzi"+ self.score.toString().charAt(i)], self.canvas.width / 2 - score_length / 2 * 34 + 34 * i, 100);
-             }
-             
-            //  this.sm.render();
-            //  this.sm.update();
-
+             //获取最高分
+             self.maxScore = localStorage.getItem("MAX_SCORE") ? localStorage.getItem("MAX_SCORE"): 0;
 
             //显示帧编号
+            self.ctx.font = "16px consolas";
             self.ctx.fillStyle = "black";
             self.ctx.textAlign = "left";
-            self.ctx.fillText("fno:" + self.fno, 20, 20);
+            self.ctx.fillText("历史最高分:" + self.maxScore, 20, 20);
+            self.ctx.fillText("关卡:" + self.checkpoint, 20, 40);
 
+            
         }, 20);
     }
 
@@ -193,15 +165,5 @@
         this.ctx.clearRect(0,0, this.canvas.width, this.canvas.height);
     }
 
-    //绑定事件
-    Game.prototype.bindEvent = function () {
-
-        //当canvas点击事件
-        var self = this;
-        this.canvas.onclick = function () {
-            self.bird.fly();
-        }
-       
-    }
 
 })();

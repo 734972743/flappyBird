@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-11-08 15:24:39
- * @LastEditTime: 2020-11-08 22:23:41
+ * @LastEditTime: 2020-11-11 01:27:37
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \canvas\flappyBird\assets\js\Pipe.js
@@ -16,7 +16,7 @@
 
         this.height1 = 100 + parseInt(Math.random() * 221);  //上管子的高度
         this.x = game.canvas.width;
-        this.interspace = 120; //两根管子之间的间隙
+        this.interspace = 160; //两根管子之间的间隙
 
         //下管子的高度
         this.height2 = 0.78 * game.canvas.height - this.interspace - this.height1;
@@ -39,32 +39,56 @@
         this.R = parseInt(this.x + 52);
 
         //管子与小鸟进行碰撞检测
-        if (this.x < game.bird.R && this.x + 52 > game.bird.L) {  //判断小鸟进入管道中间
-            if(this.B > game.bird.T  || this.T < game.bird.B ){
+        if (this.x < game.sm.bird.R && this.x + 52 > game.sm.bird.L) {  //判断小鸟进入管道中间
+            if(this.B > game.sm.bird.T  || this.T < game.sm.bird.B ){
                 //碰上了
-                clearInterval(game.time);
+                game.sm.bird.die();
+                // clearInterval(game.time);
             } 
         }
         
         //小鸟通过管道
-        if (game.bird.L > this.R && !this.isAlreadyPass) {
+        if (game.sm.bird.L > this.R && !this.isAlreadyPass) {
             this.isAlreadyPass = true;
                     game.score++;  //分数加1
         }
 
-        
-        
-
-
 
         if (this.x < -52) {
             //要销毁这个管子
-            for (let i = 0; i < game.pipeArr.length; i++){
-                if (game.pipeArr[i] == this) {
-                    game.pipeArr.splice(i,1);
+            for (let i = 0; i < game.sm.pipeArr.length; i++){
+                if (game.sm.pipeArr[i] == this) {
+                    game.sm.pipeArr.splice(i,1);
                 }
             }
         }
+
+        switch (game.checkpoint) {
+            case 1:
+                this.interspace = 190;
+                game.pipeRate = 150;
+                break;
+            
+            case 2:
+                this.interspace = 140;
+                game.pipeRate = 150;
+                break;
+            
+            case 3:
+                this.interspace = 120;
+                game.pipeRate = 130;
+                break;
+            
+            case 4:
+                this.interspace = 100;
+                game.pipeRate = 110;
+                break;
+            
+            case 5:
+                this.interspace = 80;
+                game.pipeRate = 90;
+                break;
+         }
     }
     
     Pipe.prototype.render = function () {
