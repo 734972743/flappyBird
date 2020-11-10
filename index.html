@@ -1,0 +1,57 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-11-08 10:54:47
+ * @LastEditTime: 2020-11-08 23:50:51
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \canvas\flappyBird\index.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flappyBird</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        body{
+            overflow: hidden;
+        }
+
+        #myCanvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <script src="./assets/js/Game.js"></script>
+    <script src="./assets/js/Background.js"></script>
+    <script src="./assets/js/Land.js"></script>
+    <script src="./assets/js/Pipe.js"></script>
+    <script src="./assets/js/Bird.js"></script>
+    <script src="./assets/js/SceneManager.js"></script>
+
+
+    <script>
+        /**
+         *  selecter : 选择器
+         * RjsonUrl :资源文件的地址
+         */
+        var game = new Game({
+            "selecter": "#myCanvas",
+            "RjsonUrl": "R.json"
+        });
+
+        
+
+    </script>
+    
+</body>
+</html>

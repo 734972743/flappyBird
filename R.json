@@ -1,0 +1,29 @@
+{
+    "images":[
+        {"name" : "bg_day", "url" : "./assets/image/bg_day.png"},
+        {"name" : "bg_night", "url" : "./assets/image/bg_night.png"},
+        {"name" : "bird0_0", "url" : "./assets/image/bird0_0.png"},
+        {"name" : "bird0_1", "url" : "./assets/image/bird0_1.png"},
+        {"name" : "bird0_2", "url" : "./assets/image/bird0_2.png"},
+        {"name" : "bird1_0", "url" : "./assets/image/bird1_0.png"},
+        {"name" : "bird1_1", "url" : "./assets/image/bird1_1.png"},
+        {"name" : "bird1_2", "url" : "./assets/image/bird1_2.png"},
+        {"name" : "bird2_0", "url" : "./assets/image/bird2_0.png"},
+        {"name" : "bird2_1", "url" : "./assets/image/bird2_1.png"},
+        {"name" : "bird2_2", "url" : "./assets/image/bird2_2.png"},
+        {"name" : "land", "url" : "./assets/image/land.png"},
+        {"name" : "pipe_down", "url" : "./assets/image/pipe_down.png"},
+        {"name" : "pipe_up", "url" : "./assets/image/pipe_up.png"},
+        {"name" : "shuzi0", "url" : "./assets/image/font_048.png"},
+        {"name" : "shuzi1", "url" : "./assets/image/font_049.png"},
+        {"name" : "shuzi2", "url" : "./assets/image/font_050.png"},
+        {"name" : "shuzi3", "url" : "./assets/image/font_051.png"},
+        {"name" : "shuzi4", "url" : "./assets/image/font_052.png"},
+        {"name" : "shuzi5", "url" : "./assets/image/font_053.png"},
+        {"name" : "shuzi6", "url" : "./assets/image/font_054.png"},
+        {"name" : "shuzi7", "url" : "./assets/image/font_055.png"},
+        {"name" : "shuzi8", "url" : "./assets/image/font_056.png"},
+        {"name" : "shuzi9", "url" : "./assets/image/font_057.png"}
+    ]
+
+}
