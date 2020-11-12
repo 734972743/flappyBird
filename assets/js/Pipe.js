@@ -14,7 +14,7 @@
         this.imageUp = game.R["pipe_up"];
         this.imageDown = game.R["pipe_down"];
 
-        this.height1 = 100 + parseInt(Math.random() * 221);  //上管子的高度
+        this.height1 = 20 + parseInt(Math.random() * 221);  //上管子的高度
         this.x = game.canvas.width;
         this.interspace = 160; //两根管子之间的间隙
 
@@ -63,6 +63,8 @@
             }
         }
 
+
+        //根据管卡来设置游戏难度
         switch (game.checkpoint) {
             case 1:
                 this.interspace = 190;

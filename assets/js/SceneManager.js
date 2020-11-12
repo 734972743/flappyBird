@@ -151,16 +151,16 @@
                     game.ctx.drawImage(game.R["shuzi"+ game.score.toString().charAt(i)], game.canvas.width / 2 - score_length / 2 * 34 + 34 * i, 100);
                  }
                  
-                 if (game.score > 10) {
+                 if (game.score >= 10) {
                      game.checkpoint = 2;
 
-                 } else if (game.score > 20) {
+                 } else if (game.score >= 20) {
                      checkpoint = 3;
-                 }else if (game.score > 30) {
+                 }else if (game.score >= 30) {
                     checkpoint = 4;
-                }else if (game.score > 50) {
+                }else if (game.score >= 50) {
                     checkpoint = 5;
-                }else if (game.score > 70) {
+                }else if (game.score >= 70) {
                     checkpoint = 6;
                 }
 

@@ -56,10 +56,10 @@
             windowW = 320;
         }
 
-        if (windowH > 736) {
-            windowH = 736;
-        } else if (windowH < 500) {
-            windowH = 500;
+        if (windowH > 812) {   //736
+            windowH = 812;
+        } else if (windowH < 568) {   //500
+            windowH = 568;
         }
 
         //设置画布的宽度和高度
